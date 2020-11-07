@@ -22,6 +22,70 @@ const city_names = [
   "Belgaum",
   "Bellary",
   "Bidar",
+  "Bastar",
+  "Bijapur",
+  "Bilaspur",
+  "Dantewada",
+  "Dhamtari",
+  "Durg",
+  "Jashpur",
+  "Janjgir-Champa",
+  "Korba",
+  "Koriya",
+  "Kanker",
+  "Kabirdham (Kawardha)",
+  "Mahasamund",
+  "Narayanpur",
+  "Raigarh",
+  "Rajnandgaon",
+  "Raipur",
+  "Surguja",
+  "North Goa",
+  "South Goa",
+  "Anantnag",
+  "Badgam",
+  "Bandipora",
+  "Baramulla",
+  "Doda",
+  "Ganderbal",
+  "Jammu",
+  "Kargil",
+  "Kathua",
+  "Kishtwar",
+  "Kupwara",
+  "Kulgam",
+  "Leh",
+  "Poonch",
+  "Pulwama",
+  "Rajauri",
+  "Dimapur",
+  "Kohima",
+  "Mokokchung",
+  "Mon",
+  "Phek",
+  "Tuensang",
+  "Wokha",
+  "Zunheboto",
+  "Ajmer",
+  "Alwar",
+  "Bikaner",
+  "Barmer",
+  "Banswara",
+  "Bharatpur",
+  "Baran",
+  "Bundi",
+  "Bhilwara",
+  "Churu",
+  "Chittorgarh",
+  "Dausa",
+  "Dholpur",
+  "Dungapur",
+  "Ganganagar",
+  "Hanumangarh",
+  "Jhunjhunu",
+  "Jalore",
+  "Jodhpur",
+  "Jaipur",
 ];
 
 function getdata(city) {
@@ -71,9 +135,11 @@ function getdata(city) {
                         </div>
                     </div>
                 </div>
-                `; 
+                `;
         }
-        document.getElementById("row").innerHTML += `<div class="row m-2 text-light bg-dark border border-info rounded col-md-12 p-5 text-center"><b>Total Restaurant in&nbsp${city}: ${r.results_found}</b></div>`;
+        document.getElementById(
+          "row"
+        ).innerHTML += `<div class="row m-2 text-light bg-dark border border-info rounded col-md-12 p-5 text-center"><b>Total Restaurant in&nbsp${city}: ${r.results_found}</b></div>`;
         document.getElementById("row").innerHTML += output;
       })
       .catch((r) => {
@@ -82,14 +148,16 @@ function getdata(city) {
   }
 }
 
-window.onscroll = function() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        city_no++;
-        getdata(city_names[city_no]);
-    }
+window.onscroll = function () {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    city_no++;
+    getdata(city_names[city_no]);
+  }
 };
 
-window.onload = function() { getdata(city_names[0]);}
+window.onload = function () {
+  getdata(city_names[0]);
+};
 
 // {
 //     name: "Rakesh",
